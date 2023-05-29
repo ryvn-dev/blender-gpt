@@ -3,7 +3,7 @@ from bpy.types import AddonPreferences
 
 
 class BLENDERGPT_AddonPreferences(AddonPreferences):
-    bl_idname = "blendergpt-zh"
+    bl_idname = "blender-gpt"
 
     openai_key: props.StringProperty(
         name="OPENAI API Key",

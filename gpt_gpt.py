@@ -93,26 +93,30 @@ def chatgpt(context):
         model=models[lan],
         messages=messages,
         temperature=temperatures[lan],
-        stream=True,
+        # stream=True,
         max_tokens=2000,
     )
 
     try:
-        events = []
-        final_txt = ''
+        # events = []
+        # final_txt = ''
 
-        # becuase stream = true so use delta to concatentate
-        for e in response:
-            if len(e['choices'][0]['delta']) == 0:
-                continue
+        # # becuase stream = true so use delta to concatentate
+        # for e in response:
+        #     if len(e['choices'][0]['delta']) == 0:
+        #         continue
 
-            if 'role' in e['choices'][0]['delta']:
-                continue
+        #     if 'role' in e['choices'][0]['delta']:
+        #         continue
 
-            events.append(e)
-            event_text = e['choices'][0]['delta']['content']
-            final_txt += event_text
-            print(final_txt, flush=True, end='\r')
+        #     events.append(e)
+        #     event_text = e['choices'][0]['delta']['content']
+        #     final_txt += event_text
+        #     print(final_txt, flush=True, end='\r')
+
+        # return post_process(final_txt)
+
+        final_txt = response['choices'][0]['message']['content']
 
         return post_process(final_txt)
 
