@@ -1,5 +1,9 @@
 # Blender GPT Add-on
 
+<p align="center">
+<a href="https://www.buymeacoffee.com/ryvn"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a book&emoji=📚&slug=ryvn&button_colour=40DCA5&font_colour=ffffff&font_family=Bree&outline_colour=000000&coffee_colour=FFDD00" /></a>
+</p>
+
 Introducing our newly developed Blender Add-on that harnesses the potential of OpenAI's latest GPT-4 (and GPT-3.5) to transform simple prompts into remarkable 3D models and animations. No more hassle of manually modeling complex 3D elements, let AI do the work!
 
 ### Key Features
