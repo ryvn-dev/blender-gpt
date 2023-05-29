@@ -138,7 +138,9 @@ class BLENDERGPT_OT_SEND_MSG(Operator):
             msg = scene.history.add()
             msg.type = 'USER'
             msg.content = prompts[lan]
-            prompts[lan] = ""
+            scene.prompt_input_0 = ""
+            scene.prompt_input_1 = ""
+            scene.prompt_input_2 = ""
 
         if code_exe_blender:
             msg = scene.history.add()

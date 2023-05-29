@@ -143,6 +143,13 @@ def prompt_input_generator(idx):
     )
 
 
+bpy.props.StringProperty(
+    name="a",
+    description="a",
+    default="",
+)
+
+
 def temperature_generator(idx):
     return bpy.props.FloatProperty(
         name=UI_lan['creativity'][idx],
