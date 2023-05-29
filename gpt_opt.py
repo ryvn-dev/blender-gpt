@@ -95,7 +95,7 @@ class BLENDERGPT_OT_SEND_MSG(Operator):
 
         # TODO: connect to GPT
         prf = context.preferences
-        openai.api_key = prf.addons["blendergpt-zh"].preferences.openai_key
+        openai.api_key = prf.addons["blender-gpt"].preferences.openai_key
 
         if not openai.api_key:
             if int(context.scene.lan) == 0:
@@ -112,40 +112,33 @@ class BLENDERGPT_OT_SEND_MSG(Operator):
         scene.on_finish = True
         # bpy.ops.wm.redraw_timer(type='DRAW_WIN_SWAP', iterations=1)
 
+        lan = int(context.scene.lan)
+        prompts = [scene.prompt_input_0,
+                   scene.prompt_input_1, scene.prompt_input_2]
+
         if len(scene.history) == 0 or scene.history[-1].type == 'GPT':
-            if int(context.scene.lan) == 0:
-                if scene.prompt_input_0 == "":
+            if prompts[lan] == "":
+                if lan == 0:
                     self.report({'ERROR'}, f"錯誤: 請輸入指令")
-                    scene.on_finish = False
-                    return {'CANCELLED'}
-
-                msg = scene.history.add()
-                msg.type = 'USER'
-                msg.content = scene.prompt_input_0
-            elif int(context.scene.lan) == 1:
-                if scene.prompt_input_1 == "":
+                elif lan == 1:
                     self.report({'ERROR'}, f"错误: 请输入指令")
-                    scene.on_finish = False
-                    return {'CANCELLED'}
-
-                msg = scene.history.add()
-                msg.type = 'USER'
-                msg.content = scene.prompt_input_1
-            else:
-                if scene.prompt_input_2 == "":
+                else:
                     self.report({'ERROR'}, f"Error: Please enter the prompt")
-                    scene.on_finish = False
-                    return {'CANCELLED'}
+                scene.on_finish = False
+                return {'CANCELLED'}
 
-                msg = scene.history.add()
-                msg.type = 'USER'
-                msg.content = scene.prompt_input_2
+        try:
+            code_exe_blender = chatgpt(context)
+        except Exception as e:
+            self.report({'ERROR'}, f"Error: {e}")
+            scene.on_finish = False
+            return {'CANCELLED'}
 
-        code_exe_blender = chatgpt(context)
-
-        scene.prompt_input_0 = ""
-        scene.prompt_input_1 = ""
-        scene.prompt_input_2 = ""
+        if len(scene.history) == 0 or scene.history[-1].type == 'GPT':
+            msg = scene.history.add()
+            msg.type = 'USER'
+            msg.content = prompts[lan]
+            prompts[lan] = ""
 
         if code_exe_blender:
             msg = scene.history.add()
