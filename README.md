@@ -16,6 +16,7 @@ Introducing our newly developed Blender Add-on that harnesses the potential of O
 
 <details>
   <summary>English Manual</summary>
+
 ## Get Started
 
 Install our Add-on and dive into the limitless realm of AI-powered 3D modeling.
@@ -88,6 +89,7 @@ Follow the steps below to make the most out of the Blender GPT:
     There are two ways to delete dialogues. The first is to delete the result of the last conversation. In this case, the `Submit prompt` will change to `Regenerate Response` for a fresh output. The second method allows for deleting all dialogue history. This is useful if you prefer that future generated results are not partially based on previous dialogues.
 
 That's it! Now you can enjoy the convenience of the Blender GPT. Remember, Blender GPT requires an active internet connection to function properly, as it relies on OpenAI's cloud services.
+
 </details>
 
 
@@ -165,4 +167,5 @@ That's it! Now you can enjoy the convenience of the Blender GPT. Remember, Blend
    有兩種刪除對話的方式。第一種是刪除上次對話的結果。在這種情況下，`提交指令` 將變為 `重新生成`，以便生成新的輸出。第二種方法可以刪除所有對話歷史。如果您希望未來生成的結果不會部分基於之前的對話，這將非常有用。
 
 就是這樣！現在您可以享受 Blender GPT 的便利。請記住，Blender GPT 需要一個穩定的互聯網連接才能正常工作，因為它依賴於 OpenAI 的雲服務。
+
 </details>
