@@ -14,6 +14,8 @@ Introducing our newly developed Blender Add-on that harnesses the potential of O
 - **UI Features:** Our user-friendly interface lets you maintain chat history, delete them at will, view produced codes, and much more. Experience the verisimilar simplicity and convenience of OpenAI chat GPT within the comfort of your Blender workspace.
 - **Speed and Robustness:** We take pride in our add-on's performance. Experience faster inference times compared to similar products, and witness more robust results, ensuring your creativity is never hindered.
 
+<details>
+  <summary>English Manual</summary>
 ## Get Started
 
 Install our Add-on and dive into the limitless realm of AI-powered 3D modeling.
@@ -86,3 +88,81 @@ Follow the steps below to make the most out of the Blender GPT:
     There are two ways to delete dialogues. The first is to delete the result of the last conversation. In this case, the `Submit prompt` will change to `Regenerate Response` for a fresh output. The second method allows for deleting all dialogue history. This is useful if you prefer that future generated results are not partially based on previous dialogues.
 
 That's it! Now you can enjoy the convenience of the Blender GPT. Remember, Blender GPT requires an active internet connection to function properly, as it relies on OpenAI's cloud services.
+</details>
+
+
+<details>
+  <summary>中文使用手冊</summary>
+
+## 開始使用
+
+安裝我們的插件，並深入探索無限的AI輔助的3D模型設計的領域。
+
+### 前提條件
+
+在您開始之前，請確保您具有以下條件：
+
+- 系統上已安裝 Blender 3.5 或更新版本。
+- OpenAI API 密鑰。您可以從 OpenAI 網站獲取一個。[點我](https://platform.openai.com/account/api-keys)。
+
+### 安裝
+
+要安裝 Blender GPT，請按照以下步驟操作：
+
+1. **下載插件**
+
+   在 Blender GPT 的 GitHub 頁面上，點擊 `Code`，然後選擇 `Download ZIP`。這將把存儲庫的 ZIP 文件下載到您的電腦。或者前往release取得發行版。
+
+2. **在 Blender 中安裝插件**
+
+   - 啟動 Blender。
+   - 導航至 `Edit > Preferences > Add-ons > Install`。
+   - 找到並選擇下載的 ZIP 文件。
+   - 點擊 `Install Add-on`。
+
+3. **啟用插件**
+
+   安裝後，通過在 `Blender GPT`（Object）旁邊的選框打勾來啟用插件。
+
+4. **輸入您的 OpenAI API 鍵**
+
+   轉到插件偏好設置菜單並粘貼您的 OpenAI API 密鑰。 
+
+### 使用
+
+按照以下步驟來充分利用 Blender GPT：
+
+1. **在3D視圖中打開側欄**
+
+   在3D視圖中，按 `N` 打開側欄。您將在這裡找到 `Blender GPT` 標籤。
+
+2. **選擇您的語言**
+
+   您可以在語言選項卡中選擇用戶界面和提示輸入的語言。選項讓使用者體驗更友好。
+
+3. **選擇 Chat-GPT 模型**
+
+   您可以在 `chat-gpt 模型` 選項卡中選擇 gpt-3（即 gpt-3.5）或 gpt-4 模型。但請注意，只有在 OpenAI 上有 gpt-4 訪問權限的情況下才能選擇 gpt-4 模型。
+
+4. **調整模型創造力水平**
+
+   '創意度' 選項卡允許您控制 GPT 生成結果的創造力水平（從 0 到 1）。通過調整此設置，您可以通過設定更高的值來鼓勵更多新的輸出。
+
+5. **在輸入欄位輸入指令**
+
+   在輸入欄位中，以簡單的語言（英語或中文）輸入您的命令，例如，“在隨機位置創建500個立方體”。
+
+6. **提交指令**
+
+   點擊 `提交指令` 按鈕。這將根據您提供的提示生成並執行 Blender Python 代碼。
+
+7. **檢查生成的代碼**
+
+   點擊 `GPT>` 旁邊的文字圖標，您可以查看 chatgpt 模型生成的 Python 代碼。如果您熟悉腳本編寫，可以進一步編輯這個 Python 代碼以獲得更細致的控制。如果生成的代碼質量不高，您可以直接進行調整並重新執行。
+
+8. **刪除選項**
+
+   有兩種刪除對話的方式。第一種是刪除上次對話的結果。在這種情況下，`提交指令` 將變為 `重新生成`，以便生成新的輸出。第二種方法可以刪除所有對話歷史。如果您希望未來生成的結果不會部分基於之前的對話，這將非常有用。
+
+就是這樣！現在您可以享受 Blender GPT 的便利。請記住，Blender GPT 需要一個穩定的互聯網連接才能正常工作，因為它依賴於 OpenAI 的雲服務。
+</details>
