@@ -14,6 +14,12 @@ Introducing our newly developed Blender Add-on that harnesses the potential of O
 - **UI Features:** Our user-friendly interface lets you maintain chat history, delete them at will, view produced codes, and much more. Experience the verisimilar simplicity and convenience of OpenAI chat GPT within the comfort of your Blender workspace.
 - **Speed and Robustness:** We take pride in our add-on's performance. Experience faster inference times compared to similar products, and witness more robust results, ensuring your creativity is never hindered.
 
+### Medium Report
+
+[Report](https://medium.com/@ryvnollie/blender-x-chatgpt-a-guide-to-the-ai-powered-blender-add-on-cf5766084f8f)
+
+## Manual
+
 <details>
   <summary>English Manual</summary>
 
