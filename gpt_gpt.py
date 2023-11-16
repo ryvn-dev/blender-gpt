@@ -116,7 +116,10 @@ def chatgpt(context):
         messages.append({"role": "user", "content": "Please provide me with Blender (3D software) python code satisfying the following task: " +
                         prompts[lan] + ". \n. Do not provide with anything that is not Python code. Do not provide explanations and comments."})
 
-    response = openai.ChatCompletion.create(
+    client = openai.OpenAI(
+        api_key = context.preferences.addons["blender-gpt"].preferences.openai_key,
+    )
+    response = client.chat.completions.create(
         model=models[lan],
         messages=messages,
         temperature=temperatures[lan],

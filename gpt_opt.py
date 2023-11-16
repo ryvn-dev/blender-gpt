@@ -95,9 +95,9 @@ class BLENDERGPT_OT_SEND_MSG(Operator):
 
         # TODO: connect to GPT
         prf = context.preferences
-        openai.api_key = prf.addons["blender-gpt"].preferences.openai_key
+        openai_api_key = prf.addons["blender-gpt"].preferences.openai_key
 
-        if not openai.api_key:
+        if not openai_api_key:
             if int(context.scene.lan) == 0:
                 self.report(
                     {'ERROR'}, "錯誤: 沒有偵測到 OPENAI API Key，請在插件設定中設定 OPENAI API Key")
