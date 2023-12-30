@@ -35,6 +35,9 @@ class BLENDERGPT_AddonPreferences(AddonPreferences):
         layout.prop(self, "language", text="Language")
 
     def update_language(self, context):
+        if 'blender-gpt' not in bpy.context.preferences.addons.keys():
+            return
+
         prefs = context.preferences.addons['blender-gpt'].preferences
         lan = prefs.language
 
