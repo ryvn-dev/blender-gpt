@@ -89,10 +89,10 @@ class BLENDERGPT_OT_SEND_MSG(Operator):
 
         # openai api key
         prf = context.preferences
-        openai.api_key = prf.addons["blender-gpt"].preferences.openai_key
+        prf_openai_api_key = prf.addons["blender-gpt"].preferences.openai_key
         lan = prf.addons["blender-gpt"].preferences.language
 
-        if not openai.api_key:
+        if not prf_openai_api_key:
             self.report({'ERROR'}, UI['error_no_api_key'][lan])
             return {'CANCELLED'}
 
@@ -106,7 +106,7 @@ class BLENDERGPT_OT_SEND_MSG(Operator):
                 return {'CANCELLED'}
 
         try:
-            code_exe_blender = chatgpt(context)
+            code_exe_blender = chatgpt(context, api_key=prf_openai_api_key)
         except Exception as e:
             self.report({'ERROR'}, f"Error: {e}")
             scene.on_finish = False

@@ -20,7 +20,7 @@ class BLENDERGPT_PT_PANEL(Panel):
         column = layout.column(align=True)
 
         # language youre using
-        column.label(text=UI['label_language'][lan])
+        column.label(text=UI['language'][lan])
 
         column.separator()
 
@@ -92,10 +92,10 @@ def model_props_generator():
         name=UI['label_model'][lan],
         description=UI['label_model_description'][lan],
         items=[
-            ("gpt-3.5-turbo", UI['model_options']['gpt3.5']
-             [lan], UI['model_options']['gpt3.5'][lan]),
-            ("gpt-4", UI['model_options']['gpt4']
-             [lan], UI['model_options']['gpt4'][lan]),
+            ("gpt-3.5-turbo", UI['model_options'][lan]
+             ['gpt3.5'], UI['model_options'][lan]['gpt3.5']),
+            ("gpt-4", UI['model_options'][lan]['gpt4'],
+             UI['model_options'][lan]['gpt4']),
         ],
         default="gpt-3.5-turbo",
     )

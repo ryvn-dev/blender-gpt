@@ -13,7 +13,11 @@ def post_process(final_txt):
     return final_txt
 
 
-def chatgpt(context):
+def chatgpt(context, api_key=''):
+
+    if not api_key:
+        raise Exception("Please provide an OpenAI API key")
+
     scene = context.scene
 
     # sysprompt preparation
@@ -34,15 +38,15 @@ def chatgpt(context):
         messages.append({"role": "user", "content": formatted_message})
 
     # send message to GPT
-    client = OpenAI()
-    response = client.ChatCompletion.create(
+    client = OpenAI(api_key=api_key)
+    response = client.chat.completions.create(
         model=scene.model,
         messages=messages,
         temperature=scene.creativity,
     )
 
     try:
-        final_txt = response['choices'][0]['message']['content']
+        final_txt = response.choices[0].message.content
         return post_process(final_txt)
     except IndexError:
         return ''
