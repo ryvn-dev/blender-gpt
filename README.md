@@ -8,12 +8,11 @@ Introducing our newly developed Blender Add-on that harnesses the potential of O
 
 ### Key Features
 
-- **Multi-Lingual Support:** Our user-friendly interface is not confined to a single language. Choose from English, Simplified Chinese, or Traditional Chinese for a comfortable and personalized user experience. Also, you can speak to your software in the language you're comfortable with!
-- **Choose Your Model:** Take control of the AI you're working with. Our Add-on allows you to toggle between Chat GPT-3.5 and Chat GPT-4 models based on your preference or task complexity, surely, your accessibility and budget 💰.
-- **Adjustable Creativity:** Enjoy flexibility in design with adjustable "creativity" settings. This allows you to control the randomness and creativity of the AI, offering results ranging from highly deterministic (0) to wildly creative (1). Having said that, 0 is recommended.
-- **UI Features:** Our user-friendly interface lets you maintain chat history, delete them at will, view produced codes, and much more. Experience the verisimilar simplicity and convenience of OpenAI chat GPT within the comfort of your Blender workspace.
-- **Speed and Robustness:** We take pride in our add-on's performance. Experience faster inference times compared to similar products, and witness more robust results, ensuring your creativity is never hindered.
-
+*   **Expanded Multi-Lingual Support**: We're breaking language barriers! Now switch seamlessly between English, Español, 繁體中文 (Traditional Chinese), 简体中文 (Simplified Chinese), or Français. Tailor your Blender experience to the language you're most comfortable with.
+*   **Model Selection at Your Fingertips**: Empower your creativity by choosing the right AI model for your project. Whether it's the versatile Chat GPT-3.5 or the advanced Chat GPT-4, pick the one that fits your project's complexity and budget.
+*   **Dial Up Your Creativity**: With adjustable creativity levels, you're in the driver's seat. Control how "out of the box" your AI thinks, with settings ranging from very literal (0) to highly imaginative (1). For precision work, we suggest sticking with 0.
+*   **Enhanced User Interface**: Enjoy a more intuitive and streamlined interface. Keep track of your chat history, effortlessly manage and view generated codes, and delete them as you wish. It's the OpenAI chat GPT experience, refined and integrated into your Blender workspace.
+*   **Optimized Performance**: Experience the blend of speed and reliability. Our latest version offers faster response times and even more robust outcomes, ensuring that your creative flow is always smooth and uninterrupted.
 ### Medium Report
 
 [Report](https://medium.com/@ryvnollie/blender-x-chatgpt-a-guide-to-the-ai-powered-blender-add-on-cf5766084f8f)
@@ -40,7 +39,7 @@ To install the Blender GPT, follow the steps below:
 
 1. **Download the Add-on**
 
-   On the GitHub page for the Blender GPT, click on `Code`, then select `Download ZIP`. This will download a ZIP file of the repository to your computer.
+   Go to the <a href="https://github.com/hc-psy/blender-gpt/releases/tag/lastest">Blender GPT Releases</a> on GitHub and download the latest version's ZIP file.
 
 2. **Install the Add-on in Blender**
 
@@ -55,7 +54,7 @@ To install the Blender GPT, follow the steps below:
 
 4. **Enter your OpenAI API Key**
 
-   Go to the Addon preferences menu and paste your OpenAI API key. 
+   Go to the Addon preferences menu, paste your OpenAI API key, and choose your preferred language.
 
 
 ### Usage
@@ -66,31 +65,27 @@ Follow the steps below to make the most out of the Blender GPT:
 
     In the 3D View, press `N` to open the sidebar. You will find the `Blender GPT` tab here.
 
-2. **Select Your Preferred Language**
-
-    You can choose the language of your user interface and prompt input in the Language tab. The options allow for a more user-friendly experience.
-
-3. **Choose the Chat-GPT Model**
+2. **Choose the Chat-GPT Model**
 
     You have the option to select between the gpt-3 (i.e., gpt-3.5) or gpt-4 models in the `chat-gpt model` tab. However, please note that the gpt-4 model can only be selected if you have access to gpt-4 on OpenAI.
 
-4. **Adjust Level of Model Creativity**
+3. **Adjust Level of Model Creativity**
 
     There is a 'creativity' tab that allows you to control the creativity level (from 0 to 1) of the generated results by GPT. By adjusting this setting, you can encourage more novel output by setting a higher value.
 
-5. **Enter Prompt in Input Field**
+4. **Enter Prompt in Input Field**
 
     Type your commands in plain language, either in English or Chinese, in the input field, e.g., "create 500 cubes in random locations".
 
-6. **Submit Command**
+5. **Submit Command**
 
     Click on the `Submit prompt` button. This action will generate and execute the Blender Python code based on your provided prompt.
 
-7. **Review Generated Codes**
+6. **Review Generated Codes**
 
     By clicking on the text icon next to `GPT>`, you can view the Python code generated by the chatgpt model. If you're familiar with script writing, you can further edit this Python code for finer control. In case the generated code is of subpar quality, you can tweak it directly and rerun the execution.
 
-8. **Deletion Options**
+7. **Deletion Options**
 
     There are two ways to delete dialogues. The first is to delete the result of the last conversation. In this case, the `Submit prompt` will change to `Regenerate Response` for a fresh output. The second method allows for deleting all dialogue history. This is useful if you prefer that future generated results are not partially based on previous dialogues.
 
@@ -119,7 +114,7 @@ That's it! Now you can enjoy the convenience of the Blender GPT. Remember, Blend
 
 1. **下載插件**
 
-   在 Blender GPT 的 GitHub 頁面上，點擊 `Code`，然後選擇 `Download ZIP`。這將把存儲庫的 ZIP 文件下載到您的電腦。或者前往release取得發行版。
+   前往 GitHub 上的 <a href="https://github.com/hc-psy/blender-gpt/releases/tag/lastest">Blender GPT 發布頁面</a>，下載最新版本的 ZIP 檔案。
 
 2. **在 Blender 中安裝插件**
 
@@ -134,7 +129,7 @@ That's it! Now you can enjoy the convenience of the Blender GPT. Remember, Blend
 
 4. **輸入您的 OpenAI API 鍵**
 
-   轉到插件偏好設置菜單並粘貼您的 OpenAI API 密鑰。 
+   轉到插件偏好設置菜單並粘貼您的 OpenAI API 密鑰並選擇偏好語言。 
 
 ### 使用
 
@@ -144,31 +139,27 @@ That's it! Now you can enjoy the convenience of the Blender GPT. Remember, Blend
 
    在3D視圖中，按 `N` 打開側欄。您將在這裡找到 `Blender GPT` 標籤。
 
-2. **選擇您的語言**
-
-   您可以在語言選項卡中選擇用戶界面和提示輸入的語言。選項讓使用者體驗更友好。
-
-3. **選擇 Chat-GPT 模型**
+2. **選擇 Chat-GPT 模型**
 
    您可以在 `chat-gpt 模型` 選項卡中選擇 gpt-3（即 gpt-3.5）或 gpt-4 模型。但請注意，只有在 OpenAI 上有 gpt-4 訪問權限的情況下才能選擇 gpt-4 模型。
 
-4. **調整模型創造力水平**
+3. **調整模型創造力水平**
 
    '創意度' 選項卡允許您控制 GPT 生成結果的創造力水平（從 0 到 1）。通過調整此設置，您可以通過設定更高的值來鼓勵更多新的輸出。
 
-5. **在輸入欄位輸入指令**
+4. **在輸入欄位輸入指令**
 
    在輸入欄位中，以簡單的語言（英語或中文）輸入您的命令，例如，“在隨機位置創建500個立方體”。
 
-6. **提交指令**
+5. **提交指令**
 
    點擊 `提交指令` 按鈕。這將根據您提供的提示生成並執行 Blender Python 代碼。
 
-7. **檢查生成的代碼**
+6. **檢查生成的代碼**
 
    點擊 `GPT>` 旁邊的文字圖標，您可以查看 chatgpt 模型生成的 Python 代碼。如果您熟悉腳本編寫，可以進一步編輯這個 Python 代碼以獲得更細致的控制。如果生成的代碼質量不高，您可以直接進行調整並重新執行。
 
-8. **刪除選項**
+7. **刪除選項**
 
    有兩種刪除對話的方式。第一種是刪除上次對話的結果。在這種情況下，`提交指令` 將變為 `重新生成`，以便生成新的輸出。第二種方法可以刪除所有對話歷史。如果您希望未來生成的結果不會部分基於之前的對話，這將非常有用。
 
