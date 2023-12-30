@@ -85,8 +85,7 @@ class BLENDERGPT_PT_PANEL(Panel):
 
 
 def model_props_generator():
-    addon_prefs = bpy.context.preferences.addons['blender-gpt'].preferences
-    lan = addon_prefs.language
+    lan = 'en'
 
     return bpy.props.EnumProperty(
         name=UI['label_model'][lan],
@@ -102,8 +101,7 @@ def model_props_generator():
 
 
 def prompt_input_generator():
-    addon_prefs = bpy.context.preferences.addons['blender-gpt'].preferences
-    lan = addon_prefs.language
+    lan = 'en'
 
     return bpy.props.StringProperty(
         name=UI['command'][lan],
@@ -113,8 +111,7 @@ def prompt_input_generator():
 
 
 def temperature_generator():
-    addon_prefs = bpy.context.preferences.addons['blender-gpt'].preferences
-    lan = addon_prefs.language
+    lan = 'en'
 
     return bpy.props.FloatProperty(
         name=UI['creativity'][lan],
