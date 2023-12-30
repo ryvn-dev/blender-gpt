@@ -23,15 +23,13 @@ Classes = (BLENDERGPT_PT_PANEL, BLENDERGPT_OT_DEL_ALL_MSG, BLENDERGPT_OT_DEL_MSG
 
 def register():
     for cls in Classes:
-        if cls.__name__ not in bpy.types.__dict__:
-            bpy.utils.register_class(cls)
+        bpy.utils.register_class(cls)
 
     props_initialization()
 
 
 def unregister():
     for cls in Classes:
-        if cls.__name__ in bpy.types.__dict__:
-            bpy.utils.unregister_class(cls)
+        bpy.utils.unregister_class(cls)
 
     props_clear()
