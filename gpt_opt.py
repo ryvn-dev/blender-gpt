@@ -1,9 +1,10 @@
 import bpy
-
 from bpy.types import Operator
+
 import openai
 
 from .gpt_gpt import chatgpt
+from .gpt_cst import UI
 
 
 class BLENDERGPT_OT_DEL_MSG(Operator):
@@ -12,7 +13,7 @@ class BLENDERGPT_OT_DEL_MSG(Operator):
     bl_description = "delete message"
     bl_options = {"REGISTER", "UNDO"}
 
-    msg_idx: bpy.props.IntProperty(name="訊息索引", default=0)
+    msg_idx: bpy.props.IntProperty(name="msg_idx", default=0)
 
     def execute(self, context):
         scene = context.scene
@@ -45,14 +46,7 @@ class BLENDERGPT_OT_GPT_CODE(Operator):
 
     def execute(self, context):
 
-        # text area
-        if int(context.scene.lan) == 0:
-            txt_name = '指令腳本.py'
-        elif int(context.scene.lan) == 1:
-            txt_name = '指令脚本.py'
-        else:
-            txt_name = 'prompt_script.py'
-
+        txt_name = 'prompt_script.py'
         txt = bpy.data.texts.get(txt_name)
 
         if txt is None:
@@ -93,37 +87,21 @@ class BLENDERGPT_OT_SEND_MSG(Operator):
     def execute(self, context):
         scene = context.scene
 
-        # TODO: connect to GPT
+        # openai api key
         prf = context.preferences
         openai.api_key = prf.addons["blender-gpt"].preferences.openai_key
+        lan = prf.addons["blender-gpt"].preferences.language
 
         if not openai.api_key:
-            if int(context.scene.lan) == 0:
-                self.report(
-                    {'ERROR'}, "錯誤: 沒有偵測到 OPENAI API Key，請在插件設定中設定 OPENAI API Key")
-            elif int(context.scene.lan) == 1:
-                self.report(
-                    {'ERROR'}, "错误: 没有检测到 OPENAI API Key，请在插件设置中设置 OPENAI API Key")
-            else:
-                self.report(
-                    {'ERROR'}, "Error: No OPENAI API Key detected, please set OPENAI API Key in the add-on preferences")
+            self.report({'ERROR'}, UI['error_no_api_key'][lan])
             return {'CANCELLED'}
 
         scene.on_finish = True
         # bpy.ops.wm.redraw_timer(type='DRAW_WIN_SWAP', iterations=1)
 
-        lan = int(context.scene.lan)
-        prompts = [scene.prompt_input_0,
-                   scene.prompt_input_1, scene.prompt_input_2]
-
         if len(scene.history) == 0 or scene.history[-1].type == 'GPT':
-            if prompts[lan] == "":
-                if lan == 0:
-                    self.report({'ERROR'}, f"錯誤: 請輸入指令")
-                elif lan == 1:
-                    self.report({'ERROR'}, f"错误: 请输入指令")
-                else:
-                    self.report({'ERROR'}, f"Error: Please enter the prompt")
+            if scene.prompt_input == "":
+                self.report({'ERROR'}, UI['error_no_prompt'][lan])
                 scene.on_finish = False
                 return {'CANCELLED'}
 
@@ -137,10 +115,8 @@ class BLENDERGPT_OT_SEND_MSG(Operator):
         if len(scene.history) == 0 or scene.history[-1].type == 'GPT':
             msg = scene.history.add()
             msg.type = 'USER'
-            msg.content = prompts[lan]
-            scene.prompt_input_0 = ""
-            scene.prompt_input_1 = ""
-            scene.prompt_input_2 = ""
+            msg.content = scene.prompt_input
+            scene.prompt_input = ""
 
         if code_exe_blender:
             msg = scene.history.add()

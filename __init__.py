@@ -11,7 +11,7 @@ bl_info = {
     "author": "Ryvn (@hc-psy) (@@hao-chenglo2049)",
     "description": "",
     "blender": (2, 82, 0),
-    "version": (0, 0, 1),
+    "version": (0, 0, 2),
     "warning": "",
     "category": "Object"
 }
